@@ -8,6 +8,7 @@
   </head>
   <body>
     <h1>Longest Word</h1>
+    <h2>Global Score : {{session.get('score', 0)}}</h2>
     <div>
       {% for letter in grid %}
         <span class="letter">{{ letter }}</span>
