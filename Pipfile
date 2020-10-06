@@ -13,6 +13,7 @@ importlib-metadata = "~=1.7.0"
 requests = "*"
 flask = "*"
 gunicorn = "*"
+flask-session = "*"
 
 [requires]
 python_version = "3.7"
