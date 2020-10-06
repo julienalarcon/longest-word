@@ -11,6 +11,7 @@ astroid = "*"
 [packages]
 importlib-metadata = "~=1.7.0"
 requests = "*"
+flask = "*"
 
 [requires]
 python_version = "3.7"
