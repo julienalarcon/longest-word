@@ -10,7 +10,7 @@ def my_game():
 
 class TestGame:
     @staticmethod
-    def test_game_is_well_initialized():
+    def test_grid_is_well_initialized():
         new_game = Game()
         grid = new_game.grid
         assert isinstance(grid, list)
@@ -27,5 +27,9 @@ class TestGame:
         assert my_game.is_valid("BOLD") is False
 
     @staticmethod
-    def test_empty_word(my_game):
+    def test_empty_word_is_invalid(my_game):
         assert my_game.is_valid("") is False
+
+    @staticmethod
+    def test_unknown_word_is_invalid(my_game):
+        assert my_game.is_valid("GHF") is False
