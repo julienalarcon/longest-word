@@ -3,6 +3,7 @@
 
 import random
 import string
+import requests
 
 class Game:
     GRID_SIZE = 9
@@ -11,12 +12,19 @@ class Game:
         self.grid = self.__generate_random_grid()
 
     def is_valid(self, word):
+        # Word not empty
         if not word:
             return False
 
+        # Word in grid
         for letter in word:
             if letter not in self.grid:
                 return False
+
+        # Word exists
+        r = requests.get(f"https://wagon-dictionary.herokuapp.com/{word}")
+        if not r.json()['found']:
+            return False
 
         return True
 
